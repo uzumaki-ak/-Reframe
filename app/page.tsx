@@ -1,7 +1,13 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Brain, Archive, Users, Sparkles } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { ArrowRight, Brain, Archive, Users, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -11,7 +17,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Brain className="h-8 w-8 text-primary" />
-            <h1 className="text-2xl font-bold">Philosophy Tracker</h1>
+            <h1 className="text-2xl font-bold"> Reframe</h1>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/explore-thoughts">
@@ -31,8 +37,9 @@ export default function HomePage() {
             Archive Your Evolving Beliefs
           </h2>
           <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            A place to document your philosophical evolution. Track how your worldviews, beliefs, and perspectives have
-            changed over time. Share your journey of intellectual growth.
+            A place to document your philosophical evolution. Track how your
+            worldviews, beliefs, and perspectives have changed over time. Share
+            your journey of intellectual growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/share-evolution">
@@ -59,7 +66,8 @@ export default function HomePage() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                Compare your old beliefs with your current worldview in a clean side-by-side format.
+                Compare your old beliefs with your current worldview in a clean
+                side-by-side format.
               </CardDescription>
             </CardContent>
           </Card>
@@ -70,7 +78,10 @@ export default function HomePage() {
               <CardTitle>Community Voting</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Let others vote on whether they align with your old or new philosophy.</CardDescription>
+              <CardDescription>
+                Let others vote on whether they align with your old or new
+                philosophy.
+              </CardDescription>
             </CardContent>
           </Card>
 
@@ -80,7 +91,10 @@ export default function HomePage() {
               <CardTitle>Smart Archive</CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Deleted posts are safely archived for 7 days before permanent removal.</CardDescription>
+              <CardDescription>
+                Deleted posts are safely archived for 7 days before permanent
+                removal.
+              </CardDescription>
             </CardContent>
           </Card>
 
@@ -91,7 +105,8 @@ export default function HomePage() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                Personalize your experience with themes, fonts, colors, and layout options.
+                Personalize your experience with themes, fonts, colors, and
+                layout options.
               </CardDescription>
             </CardContent>
           </Card>
@@ -106,9 +121,12 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
                 <div className="p-4 bg-muted/50 rounded-lg">
-                  <h4 className="font-semibold text-destructive mb-2">What I used to believe:</h4>
+                  <h4 className="font-semibold text-destructive mb-2">
+                    What I used to believe:
+                  </h4>
                   <p className="text-muted-foreground italic">
-                    "Success is purely about making money and climbing the corporate ladder."
+                    "Success is purely about making money and climbing the
+                    corporate ladder."
                   </p>
                 </div>
               </div>
@@ -117,10 +135,12 @@ export default function HomePage() {
               </div>
               <div className="space-y-4">
                 <div className="p-4 bg-primary/10 rounded-lg">
-                  <h4 className="font-semibold text-primary mb-2">What I believe now:</h4>
+                  <h4 className="font-semibold text-primary mb-2">
+                    What I believe now:
+                  </h4>
                   <p className="text-muted-foreground italic">
-                    "True success is finding fulfillment, maintaining relationships, and contributing positively to
-                    society."
+                    "True success is finding fulfillment, maintaining
+                    relationships, and contributing positively to society."
                   </p>
                 </div>
               </div>
@@ -132,9 +152,12 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-16 text-center">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-3xl font-bold mb-6">Ready to Track Your Evolution?</h3>
+          <h3 className="text-3xl font-bold mb-6">
+            Ready to Track Your Evolution?
+          </h3>
           <p className="text-lg text-muted-foreground mb-8">
-            Join others in documenting their philosophical journey. Your evolution matters.
+            Join others in documenting their philosophical journey. Your
+            evolution matters.
           </p>
           <Link href="/share-evolution">
             <Button size="lg" className="text-lg px-8">
@@ -147,9 +170,9 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-muted-foreground">
-          <p>&copy; 2024 Philosophy Tracker. A place for intellectual evolution.</p>
+          <p>&copy; 2024 . Reframe A place for intellectual evolution.</p>
         </div>
       </footer>
     </div>
-  )
+  );
 }

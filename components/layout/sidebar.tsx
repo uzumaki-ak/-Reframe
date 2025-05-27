@@ -157,7 +157,7 @@ export function Sidebar({ className }: SidebarProps) {
             <Link href="/" className="flex items-center gap-2">
               {/* <Brain className="h-6 w-6 text-primary" /> */}
               <img src="/logo.jpg" alt="logo" height={20} width={20} />
-              <span className="font-semibold">Philosophy Tracker</span>
+              <span className="font-semibold"> Reframe</span>
             </Link>
             <Button
               variant="ghost"
