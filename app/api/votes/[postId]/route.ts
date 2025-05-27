@@ -1,47 +1,50 @@
-import { type NextRequest, NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { type NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-export async function GET(request: NextRequest, { params }: { params: { postId: string } }) {
+export async function GET(request: NextRequest, context: any) {
   try {
-    const { searchParams } = new URL(request.url)
-    const userId = searchParams.get("userId")
+    // Ensure params are resolved by destructuring after context
+    const { params } = context;
+    const postId = params.postId;
 
-    // Get vote counts
+    const { searchParams } = new URL(request.url);
+    const userId = searchParams.get("userId");
+
     const votes = await prisma.vote.findMany({
-      where: { postId: params.postId },
-    })
+      where: { postId },
+    });
 
     const counts = {
       beforeUp: votes.filter((vote) => vote.type === "BEFORE_UP").length,
       beforeDown: votes.filter((vote) => vote.type === "BEFORE_DOWN").length,
       afterUp: votes.filter((vote) => vote.type === "AFTER_UP").length,
       afterDown: votes.filter((vote) => vote.type === "AFTER_DOWN").length,
-    }
+    };
 
-    // Get user votes if userId provided
-    let userVotes = {}
+    let userVotes = {};
     if (userId) {
       const userVoteRecords = await prisma.vote.findMany({
         where: {
-          postId: params.postId,
-          userId: userId,
+          postId,
+          userId,
         },
-      })
+      });
 
-      const result: { before?: string; after?: string } = {}
+      const result: { before?: string; after?: string } = {};
       userVoteRecords.forEach((vote) => {
         if (vote.type.startsWith("BEFORE")) {
-          result.before = vote.type.endsWith("UP") ? "up" : "down"
+          result.before = vote.type.endsWith("UP") ? "up" : "down";
         } else {
-          result.after = vote.type.endsWith("UP") ? "up" : "down"
+          result.after = vote.type.endsWith("UP") ? "up" : "down";
         }
-      })
-      userVotes = result
+      });
+
+      userVotes = result;
     }
 
-    return NextResponse.json({ counts, userVotes })
+    return NextResponse.json({ counts, userVotes });
   } catch (error) {
-    console.error("Error fetching votes:", error)
-    return NextResponse.json({ error: "Failed to fetch votes" }, { status: 500 })
+    console.error("Error fetching votes:", error);
+    return NextResponse.json({ error: "Failed to fetch votes" }, { status: 500 });
   }
 }
