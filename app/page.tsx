@@ -6,7 +6,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, Brain, Archive, Users, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Brain,
+  Archive,
+  Users,
+  Sparkles,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function HomePage() {
@@ -171,6 +179,14 @@ export default function HomePage() {
       <footer className="border-t mt-16">
         <div className="container mx-auto px-4 py-8 text-center text-muted-foreground">
           <p>&copy; 2024 . Reframe A place for intellectual evolution.</p>
+          <div className="mt-4 gap-4 flex justify-center">
+            <Link href={"https://www.instagram.com/anikeshiro/"}>
+              <Instagram className="inline h-6 w-6 text-muted-foreground hover:text-primary transition-colors ml-2" />
+            </Link>
+            <Link href={"https://www.linkedin.com/in/anikesh-kumar-1b87b42a5/"}>
+              <Linkedin className="inline h-6 w-6 text-muted-foreground hover:text-primary transition-colors ml-2" />
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
