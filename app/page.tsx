@@ -24,16 +24,16 @@ export default function HomePage() {
       <header className="border-b">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Brain className="h-8 w-8 text-primary" />
+           <img src="/logo.jpg" alt="logo" height={40} width={40} />
             <h1 className="text-2xl font-bold"> Reframe</h1>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/explore-thoughts">
               <Button variant="ghost">Explore Thoughts</Button>
             </Link>
-            <Link href="/share-evolution">
+            {/* <Link href="/share-evolution">
               <Button>Share Evolution</Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </header>
